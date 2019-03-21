@@ -1,0 +1,14 @@
+uuid: 5fc394c7-b6df-4c4f-9f62-a8d0e0f57b52
+name: 'Behat Workshop'
+mail: jchin1968@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
