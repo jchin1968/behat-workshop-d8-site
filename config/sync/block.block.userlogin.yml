@@ -1,16 +1,14 @@
-uuid: 12de48d5-28b1-4820-a5a2-ab3a52454343
+uuid: c5727900-4723-42c9-bccf-e4c0410799d8
 langcode: en
 status: true
 dependencies:
   module:
     - user
   theme:
-    - bartik
-_core:
-  default_config_hash: 4QlSnWBcxxKMIFRM8sbu_MjSkcp3NjGgnVrc-lynQHI
-id: bartik_login
-theme: bartik
-region: sidebar_first
+    - seven
+id: userlogin
+theme: seven
+region: content
 weight: 0
 provider: null
 plugin: user_login_block
@@ -18,5 +16,5 @@ settings:
   id: user_login_block
   label: 'User login'
   provider: user
-  label_display: visible
+  label_display: '0'
 visibility: {  }
