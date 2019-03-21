@@ -1,3 +1,4 @@
+@javascript
 Feature: Homepage
   In order to have a good user experience
   As a user
