@@ -27,7 +27,6 @@ default:
       drupal:
         drupal_root: '/var/www/workshop/web'
       region_map:
-        header: "#header"
         page_title: ".page-title"
       selectors:
         message_selector: '.messages'
