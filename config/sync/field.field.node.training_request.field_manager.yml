@@ -1,0 +1,28 @@
+uuid: 10d002ca-c406-45f1-9955-ce99f114225d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_manager
+    - node.type.training_request
+id: node.training_request.field_manager
+field_name: field_manager
+entity_type: node
+bundle: training_request
+label: Manager
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

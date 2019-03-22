@@ -1,0 +1,108 @@
+uuid: 13ee863e-daa9-428b-b756-5b31c3bafa74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.training_request.body
+    - field.field.node.training_request.field_end_date
+    - field.field.node.training_request.field_estimated_cost
+    - field.field.node.training_request.field_manager
+    - field.field.node.training_request.field_start_date
+    - node.type.training_request
+  module:
+    - datetime
+    - path
+    - text
+id: node.training_request.default
+targetEntityType: node
+bundle: training_request
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_end_date:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_estimated_cost:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_manager:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_start_date:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

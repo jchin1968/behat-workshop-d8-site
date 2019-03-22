@@ -1,0 +1,22 @@
+uuid: e633063d-e1e3-4205-aebd-6808fc4c4bcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.training_request
+  module:
+    - text
+id: node.training_request.body
+field_name: body
+entity_type: node
+bundle: training_request
+label: Purpose
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

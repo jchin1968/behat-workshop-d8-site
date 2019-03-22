@@ -1,0 +1,70 @@
+uuid: 2ee0b57b-b3bd-4e74-a112-8818fd03a75a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.training_request.body
+    - field.field.node.training_request.field_end_date
+    - field.field.node.training_request.field_estimated_cost
+    - field.field.node.training_request.field_manager
+    - field.field.node.training_request.field_start_date
+    - node.type.training_request
+  module:
+    - datetime
+    - text
+    - user
+id: node.training_request.default
+targetEntityType: node
+bundle: training_request
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_end_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_estimated_cost:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_manager:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_start_date:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

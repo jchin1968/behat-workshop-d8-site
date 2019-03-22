@@ -1,0 +1,23 @@
+uuid: 21d6e2c9-a71b-448a-abf2-75c741a1716d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estimated_cost
+    - node.type.training_request
+id: node.training_request.field_estimated_cost
+field_name: field_estimated_cost
+entity_type: node
+bundle: training_request
+label: 'Estimated Cost'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: SGD
+field_type: float
