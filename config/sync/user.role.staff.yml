@@ -6,4 +6,8 @@ id: staff
 label: Staff
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create training_request content'
+  - 'delete own training_request content'
+  - 'edit own training_request content'
+  - 'view training_request revisions'

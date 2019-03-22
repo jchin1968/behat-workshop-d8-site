@@ -6,4 +6,12 @@ id: manager
 label: Manager
 weight: 2
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create training_request content'
+  - 'delete any training_request content'
+  - 'delete own training_request content'
+  - 'delete training_request revisions'
+  - 'edit any training_request content'
+  - 'edit own training_request content'
+  - 'revert training_request revisions'
+  - 'view training_request revisions'
