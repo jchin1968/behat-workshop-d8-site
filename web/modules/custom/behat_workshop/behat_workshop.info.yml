@@ -1,0 +1,5 @@
+name: Behat Workshop
+description: Custom module for Behat Workshop
+package: Miscellaneous
+type: module
+core: '8.x'

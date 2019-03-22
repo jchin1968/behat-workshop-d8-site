@@ -1,0 +1,15 @@
+<?php
+use \Drupal\Core\Form\FormStateInterface;
+use \Drupal\user\Entity\User;
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function behat_workshop_form_node_training_request_form_alter(&$form, FormStateInterface $form_state) {
+  // Get logged in user's manager account and set it as the default value
+  // for the Training Request form manager field.
+  $current_user = User::load(\Drupal::currentUser()->id());
+  $manager = User::load($current_user->get('field_manager')->target_id);
+  if (!empty($manager)) {
+    $form['field_manager']['widget'][0]['target_id']['#default_value'] = $manager;
+  }
+}
