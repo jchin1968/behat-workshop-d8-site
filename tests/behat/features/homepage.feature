@@ -7,4 +7,4 @@ Feature: Homepage
   Scenario: Welcome
     Given I am an anonymous user
     When I am on the homepage
-    Then I should see the heading "Welcome to Behat Workshop"
+    Then I should see the heading "Welcome to Behat Workshop" in the "page_title"
