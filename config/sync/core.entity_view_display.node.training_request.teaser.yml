@@ -27,4 +27,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_end_date: true
+  field_estimated_cost: true
+  field_manager: true
+  field_start_date: true
