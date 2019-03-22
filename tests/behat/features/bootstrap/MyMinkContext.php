@@ -85,4 +85,33 @@ class MyMinkContext extends MinkContext {
     return $element;
   }
 
+  /**
+   * Step definition to validate an entity reference field.
+   *
+   * @throws \Exception
+   *
+   * @Then the :field (entity )reference field should contain :value
+   */
+  public function theReferenceFieldShouldContain($field, $value) {
+    // Find the reference field on the page and get it's value.
+    $element = $this->findField($field);
+    $actual = $element->getValue();
+
+    // Validate if the actual value is a valid referenced value with the entity
+    // ID in brackets i.e Joe (123) which is the default behavior for Drupal
+    // referenced fields.
+    $regex = '\s\(\d+\)';
+    preg_match("/$regex/", $actual, $matches);
+    if (empty($matches)) {
+      throw new \Exception(sprintf("Field '%s' does not appear to be a reference field type", $field));
+    }
+
+    // Check if the expected value is in the actual value but without the entity
+    // id portion.
+    $regex = $value . $regex;
+    preg_match("/$regex/", $actual, $matches);
+    if (empty($matches)) {
+      throw new \Exception(sprintf("The expected value '%s' is not in the actual value '%s' for the reference field '%s'", $value, $actual, $field));
+    }
+  }
 }

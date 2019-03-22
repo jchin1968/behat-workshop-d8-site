@@ -42,7 +42,7 @@ Feature: Request for training
   Scenario Outline: Auto-filled fields
     Given I am logged in as "<user>"
     When I visit "node/add/training_request"
-    Then the "Manager" field should contain "<manager>"
+    Then the "Manager" reference field should contain "<manager>"
     Examples:
       | user   | manager |
       | Martin | Jill    |
