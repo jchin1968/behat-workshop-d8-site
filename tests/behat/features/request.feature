@@ -41,4 +41,4 @@ Feature: Request for training
   Scenario: Auto-filled fields
     Given I am logged in as "Martin"
     When I visit "node/add/training_request"
-    Then the "Manager" reference field should contain "Jill"
+    Then the "Manager" field should contain "Jill"
