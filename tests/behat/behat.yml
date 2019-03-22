@@ -28,6 +28,8 @@ default:
         drupal_root: '/var/www/workshop/web'
       region_map:
         page_title: ".page-title"
+        manager: ".field--name-field-manager"
+        estimated_cost: ".field--name-field-estimated-cost"
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.messages--error'

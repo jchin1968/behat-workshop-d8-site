@@ -7,11 +7,10 @@ Feature: Request for training
   Background:
     Given users:
       | name    | email           | roles   | status | field_manager |
-      | Moira   | joe@test.bot    | Manager | 1      |               |
-      | Joe     | joe@test.bot    | Manager | 1      | Moira         |
-      | Jill    | joe@test.bot    | Manager | 1      | Moira         |
-      | Martin  | martin@test.bot | Staff   | 1      | Joe           |
-      | Oliver  | oliver@test.bot | Staff   | 1      | Jill          |
+      | Joe     | joe@test.bot    | Manager | 1      |               |
+      | Jill    | joe@test.bot    | Manager | 1      |               |
+      | Oliver  | oliver@test.bot | Staff   | 1      | Joe           |
+      | Martin  | martin@test.bot | Staff   | 1      | Jill          |
 
   Scenario: Request form accessible to staff users
     Given I am logged in as a "Staff"
@@ -25,19 +24,21 @@ Feature: Request for training
     And I should see the text "You are not authorized to access this page."
 
   Scenario: Submit Form
-    Given I am logged in as "Martin"
+    Given I am logged in as "Oliver"
     And I visit "node/add/training_request"
     When I fill in the following:
-      | Manager           | Joe                                 |
       | Short Description | Behat Workshop                      |
       | Purpose           | Need to implement automated testing |
-      | Start Date        | 03/28/2019                          |
-      | End Date          | 03/29/2019                          |
-      | Estimated Cost    | 50.00                               |
+      | Manager           | Joe                                 |
+      | Start Date        | 04/20/2019                          |
+      | End Date          | 04/22/2019                          |
+      | Estimated Cost    | 75.00                               |
     And I press the "Save" button
     Then I should see the success message "Training Request Behat Workshop has been created."
+    And I should see the link "Joe" in the "manager" region
+    And I should see "$75.00SGD" in the "estimated_cost" region
 
   Scenario: Auto-filled fields
     Given I am logged in as "Martin"
     When I visit "node/add/training_request"
-    Then the "Manager" reference field should contain "Joe"
+    Then the "Manager" reference field should contain "Jill"
