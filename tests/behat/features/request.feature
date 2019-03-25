@@ -6,11 +6,12 @@ Feature: Request for training
 
   Background:
     Given users:
-      | name    | email           | roles   | status | field_manager |
-      | Joe     | joe@test.bot    | Manager | 1      |               |
-      | Jill    | joe@test.bot    | Manager | 1      |               |
-      | Oliver  | oliver@test.bot | Staff   | 1      | Joe           |
-      | Martin  | martin@test.bot | Staff   | 1      | Jill          |
+      | name   | email           | roles   | status | field_manager |
+      | Moira  | moira@test.bot  | Manager | 1      |               |
+      | Joe    | joe@test.bot    | Manager | 1      | Moira         |
+      | Jill   | joe@test.bot    | Manager | 1      | Moira         |
+      | Oliver | oliver@test.bot | Staff   | 1      | Joe           |
+      | Martin | martin@test.bot | Staff   | 1      | Jill          |
 
   Scenario: Request form accessible to staff users
     Given I am logged in as a "Staff"
@@ -38,7 +39,13 @@ Feature: Request for training
     And I should see the link "Joe" in the "manager" region
     And I should see "$75.00SGD" in the "estimated_cost" region
 
-  Scenario: Auto-filled fields
-    Given I am logged in as "Martin"
+  Scenario Outline: Auto-filled fields
+    Given I am logged in as "<user>"
     When I visit "node/add/training_request"
-    Then the "Manager" field should contain "Jill"
+    Then the "Manager" field should contain "<manager>"
+    Examples:
+      | user   | manager |
+      | Martin | Jill    |
+      | Oliver | Joe     |
+      | Jill   | Moira   |
+      | Joe    | Moira   |
