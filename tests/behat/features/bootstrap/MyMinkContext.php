@@ -3,7 +3,6 @@
 use Drupal\DrupalExtension\Context\MinkContext;
 use Behat\Mink\Exception\ExpectationException;
 
-
 class MyMinkContext extends MinkContext {
 
   /**
