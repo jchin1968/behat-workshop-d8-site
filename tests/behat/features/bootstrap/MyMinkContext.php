@@ -16,7 +16,7 @@ class MyMinkContext extends MinkContext {
   public function fillField($field, $value) {
     // Locate the field on the page.
     // $element = $this->getSession()->getPage()->findField($field);  // Default way to locate a field. Fails for date popup.
-    $element  = $this->findField($field);                             // Our new way to handle date popup.
+    $element  = $this->myFindField($field);                             // Our new way to handle date popup.
 
     // Throw an error if the field cannot be found.
     if (empty($element)) {
@@ -61,7 +61,7 @@ class MyMinkContext extends MinkContext {
    * user from a labeling perspective but Behat operations using the Drupal
    * Extension fails.
    */
-  public function findField($locator) {
+  public function myFindField($locator) {
     // Default way to find a field.
     $element = $this->getSession()->getPage()->findField($locator);
 
@@ -93,7 +93,7 @@ class MyMinkContext extends MinkContext {
    */
   public function theReferenceFieldShouldContain($field, $value) {
     // Find the reference field on the page and get it's value.
-    $element = $this->findField($field);
+    $element = $this->myFindField($field);
     $actual = $element->getValue();
 
     // Validate if the actual value is a valid referenced value with the entity
